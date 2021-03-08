@@ -34,6 +34,7 @@ public class BoolscheAusdrückeAufgabe {
         String holiday = "Yay";
         String weekend = "Yes";
 
+
         if (holiday != weekend) {
             System.out.println("That's great!");
         }
