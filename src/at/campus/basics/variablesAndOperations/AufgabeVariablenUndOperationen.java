@@ -10,7 +10,7 @@ public class AufgabeVariablenUndOperationen {
         // Erstelle eine Variable size. Weise ihr den Wert der Variable amount zu
 
         int size = amount;
-        System.out.println(amount);
+        System.out.println(size);
 
         // Multipliziere beide Variablen miteinander - Weise das Ergebnis der neuen Variable result zu
 
@@ -22,5 +22,5 @@ public class AufgabeVariablenUndOperationen {
 
         System.out.println(result);
 
-        }
+    }
 }
