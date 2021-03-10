@@ -16,23 +16,21 @@ public class AufgabeWhileLoop {
         int max = 30;
         int sum = 0;
 
-        boolean areRandomNumbers = false;
+        boolean areRandomNumbers = true;
 
 
-        while (!areRandomNumbers) {
-            int randomNumber = random.nextInt(max - min + 1) + min;
+        while (areRandomNumbers) {
+            int randomNumber = random.nextInt(max - min) + min;
             System.out.println("Number: " + randomNumber);
 
-            if (randomNumber == 15) {
-                areRandomNumbers = true;
-            } else if (randomNumber == 25) {
-                areRandomNumbers = true;
-            }
-
             sum = sum + randomNumber;
-            System.out.println("The sum is: " + sum);
+
+            if (randomNumber == 15 || randomNumber == 25) {
+                areRandomNumbers = false;
 
             }
+            }
+        System.out.println("The sum is: " + sum);
 
         }
     }
