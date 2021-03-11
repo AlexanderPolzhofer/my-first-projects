@@ -8,7 +8,7 @@ public class arrayAufgabeEins {
 
         // Erstelle ein Array von 10 ganzen Zahlen. Gehe das Array in einem Loop durch und berechne die Summe!
 
-        int [] numbers = {1, 2, 3, 4, 5, 6 ,7 ,8, 9, 10};
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
