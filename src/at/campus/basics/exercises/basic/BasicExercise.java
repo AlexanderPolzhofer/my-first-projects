@@ -1,6 +1,6 @@
 package at.campus.basics.exercises.basic;
 
-public class basicExercise {
+public class BasicExercise {
     public static void main(String[] args) {
 
         String name = "Alex";

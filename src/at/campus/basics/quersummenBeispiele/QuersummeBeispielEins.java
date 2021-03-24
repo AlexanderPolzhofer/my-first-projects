@@ -1,6 +1,6 @@
 package at.campus.basics.quersummenBeispiele;
 
-public class quersummeBeispielEins {
+public class QuersummeBeispielEins {
 
     public static void main(String[] args) {
 
@@ -21,7 +21,6 @@ public class quersummeBeispielEins {
             for (int i = 0; i < numbers.length; i++) {
                 sum += Character.getNumericValue(numbers[i]);
             }
-
 
             if (sum == 15) {
                 System.out.println("Durchlauf: " + j + " Quersumme: " + sum);
@@ -53,15 +52,3 @@ public class quersummeBeispielEins {
         System.out.println("Insgesamt sind es: " + countingSum + " Durchläufe!");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

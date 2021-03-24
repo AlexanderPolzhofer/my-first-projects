@@ -1,6 +1,6 @@
 package at.campus.basics.quersummenBeispiele;
 
-public class quersummeBeispielZwei {
+public class QuersummeBeispielZwei {
 
     public static void main(String[] args) {
         /*Gib alle Zahlen zwischen 0 und 1000 aus, bei welchen die Quersumme ein vielfaches von 7 ist.
@@ -54,5 +54,3 @@ public class quersummeBeispielZwei {
         System.out.println("In Summe sind es: " + countingSum + " Durchläufe!");
     }
 }
-
-

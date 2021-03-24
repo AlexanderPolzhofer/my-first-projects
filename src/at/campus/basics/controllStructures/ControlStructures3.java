@@ -2,7 +2,7 @@ package at.campus.basics.controllStructures;
 
 import java.util.Random;
 
-public class controlStructures3 {
+public class ControlStructures3 {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package at.campus.basics.loopsBeispiele;
 
 import java.util.Scanner;
 
-public class beispieleAufgabeVier {
+public class BeispieleAufgabeVier {
     public static void main(String[] args) {
 
         // Erstelle einen While Loop. Bei jedem Schleifendurchgang muss der Benutzer eine Eingabe machen. Sobald er "exit" eingibt erscheint "Das Programm wird beendet". Das Programm wird dann beendet!

@@ -1,6 +1,6 @@
 package at.campus.basics.booleII;
 
-public class boolExpressionsExerciseII {
+public class BoolExpressionsExerciseII {
 
     public static void main(String[] args) {
         // Der Fahrer darf das Motorrad fahren, wenn er 24 Jahre oder älter ist oder den

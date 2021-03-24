@@ -3,7 +3,7 @@ package at.campus.basics.arraysBeispiele;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-public class arrayAufgabeZwei {
+public class ArrayAufgabeZwei {
     public static void main(String[] args) {
 
         // Erstelle ein Array von 50 Zufallszahlen mit Werten zwischen 0 und 100. Gib alle Zahlen in einem For-Loop aus und berechne gleichzeitig die Summe der Zahlen:

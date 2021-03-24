@@ -28,7 +28,6 @@ public class Bankomat {
             int withdrawMoney;
 
 
-
             switch (typeInNumber) {
                 case 1:
                     System.out.println("Wie viel € möchten Sie einzahlen?");
@@ -38,9 +37,7 @@ public class Bankomat {
                     } else {
                         accountValue = accountValue + depositNumber;
                         System.out.println("Ihr Kontostand beträgt nun " + (accountValue) + "€");
-
                     }
-
                     break;
                 case 2:
                     System.out.println("Wie viel € möchten Sie abheben?");
@@ -59,13 +56,13 @@ public class Bankomat {
                     System.out.println("Auf Wiedersehen, bis zum nächsten Mal!");
 //                        isAtmMachineRunning = false;
                     System.exit(0);
-                        break;
+                    break;
                 default:
                     System.out.println("Wählen Sie eine gültige Eingabe!");
                     String reTypeIn = scanner.nextLine();
                     System.out.println(reTypeIn);
                     break;
-                    }
             }
         }
+    }
 }

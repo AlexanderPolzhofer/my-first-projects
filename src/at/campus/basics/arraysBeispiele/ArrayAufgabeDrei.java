@@ -2,7 +2,7 @@ package at.campus.basics.arraysBeispiele;
 
 import java.util.Arrays;
 
-public class arrayAufgabeDrei {
+public class ArrayAufgabeDrei {
 
     public static void main(String[] args) {
     /*Sortiere ein Array mit Zahlen nach deren Wert.

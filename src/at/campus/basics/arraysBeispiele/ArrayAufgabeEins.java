@@ -2,7 +2,7 @@ package at.campus.basics.arraysBeispiele;
 
 import java.util.stream.IntStream;
 
-public class arrayAufgabeEins {
+public class ArrayAufgabeEins {
 
     public static void main(String[] args) {
 

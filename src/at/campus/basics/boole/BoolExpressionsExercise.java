@@ -2,7 +2,7 @@ package at.campus.basics.boole;
 
 import java.util.Scanner;
 
-public class boolExpressionsExercise {
+public class BoolExpressionsExercise {
     public static void main(String[] args) {
 
         //Wenn nur noch zwei Schokoladen im Kühlschrank sind, muss ich neue kaufen (mit Eingabe):

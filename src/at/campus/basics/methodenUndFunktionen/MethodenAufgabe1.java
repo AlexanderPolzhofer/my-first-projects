@@ -19,7 +19,6 @@ public class MethodenAufgabe1 {
     }
 
     public static double minus() {
-
         double a = 3.1415;
         double b = 0.918273;
 

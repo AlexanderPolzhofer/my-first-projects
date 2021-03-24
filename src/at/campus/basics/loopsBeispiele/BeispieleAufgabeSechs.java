@@ -1,6 +1,6 @@
 package at.campus.basics.loopsBeispiele;
 
-public class beispieleAufgabeSechs {
+public class BeispieleAufgabeSechs {
 
     public static void main(String[] args) {
 
