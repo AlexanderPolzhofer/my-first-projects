@@ -1,12 +1,17 @@
 package at.campus.basics.arraysBeispiele;
 
-public class personenImLift {
+import java.util.Arrays;
+import java.util.Random;
+
+public class PersonenImLift {
     public static void main(String[] args) {
 
     /*  Erstelle ein Zahlenarray dass das Gewicht von Personen in einem Aufzug beinhaltet.
     Mit Hilfe einer Schleife werden die einzelnen Werte addiert, sollte das maximal zulässige Gesamtgewicht von 1.600 kg überschritten werden,
     so wird ausgegeben das der Aufzug überlastet ist und die Schleife beendet sich.
     * */
+
+       /* // Möglichkeit Eins:
 
         int[] dataWeight = {50, 65, 75, 78, 95, 112, 156, 245, 147, 26, 24, 59, 58, 47, 74, 88, 54, 65, 54, 87, 74, 34, 36, 68, 59, 14, 74, 58, 96, 78, 99};
         int sum = 0;
@@ -25,6 +30,27 @@ public class personenImLift {
                 System.exit(0);
             }
 
+        }+/
+
+        */
+
+        // Möglichkeit Zwei:
+
+        Random random = new Random();
+
+        int [] randomNumbersArray = new int[200];
+
+        int min = 24;
+        int max = 225;
+
+        for (int i=0;i<200;i++) {
+            randomNumbersArray[i] = random.nextInt((max - min) - min);
         }
+
+        System.out.println(Arrays.toString(randomNumbersArray));
+
+
+
     }
+
 }
