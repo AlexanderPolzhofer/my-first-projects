@@ -1,7 +1,5 @@
 package at.campus.basics.methodenUndFunktionen;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 public class MethodenAufgabe2 {
@@ -27,7 +25,6 @@ public class MethodenAufgabe2 {
 
         String typeIn = scanner.nextLine();
 
-
         String male = "male";
         String female = "female";
 
@@ -42,7 +39,6 @@ public class MethodenAufgabe2 {
             System.out.println("Das ist keine gültige Eingabe!");
         }
     }
-
 
     public static String characterFemale() {
 
@@ -62,5 +58,4 @@ public class MethodenAufgabe2 {
 
         return hello + " " + firstName + " " + lastName;
     }
-
 }
