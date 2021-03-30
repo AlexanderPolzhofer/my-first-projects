@@ -11,7 +11,7 @@ public class PersonenImLift {
     so wird ausgegeben das der Aufzug überlastet ist und die Schleife beendet sich.
     * */
 
-       /* // Möglichkeit Eins:
+        // Möglichkeit Eins:
 
         int[] dataWeight = {50, 65, 75, 78, 95, 112, 156, 245, 147, 26, 24, 59, 58, 47, 74, 88, 54, 65, 54, 87, 74, 34, 36, 68, 59, 14, 74, 58, 96, 78, 99};
         int sum = 0;
@@ -21,36 +21,31 @@ public class PersonenImLift {
             sum = sum + dataWeight[i];
             counterSum = counterSum + 1;
 
-
             System.out.println("Durchlauf Nr.: " + counterSum + " ___ " + "Die Summe ist --> " + sum);
-
 
             if (sum >= 1600) {
                 System.out.println("Der Aufzug ist überlastet.");
                 System.exit(0);
             }
 
-        }+/
+            // Möglichkeit Zwei:
 
-        */
+            Random random = new Random();
 
-        // Möglichkeit Zwei:
+            int[] randomNumbersArray = new int[20];
 
-        Random random = new Random();
+            int sumWeightArray = 0;
 
-        int [] randomNumbersArray = new int[200];
-
-        int min = 24;
-        int max = 225;
-
-        for (int i=0;i<200;i++) {
-            randomNumbersArray[i] = random.nextInt((max - min) - min);
+            for (int z = 0; z < randomNumbersArray.length; z++) {
+                randomNumbersArray[z] = random.nextInt(250);
+                sumWeightArray += randomNumbersArray[z];
+                if (sumWeightArray >= 1600) {
+                    System.out.println(Arrays.toString(randomNumbersArray));
+                    System.out.println(sumWeightArray);
+                    System.out.println("Der Aufzug ist überlastet!");
+                    break;
+                }
+            }
         }
-
-        System.out.println(Arrays.toString(randomNumbersArray));
-
-
-
     }
-
 }
