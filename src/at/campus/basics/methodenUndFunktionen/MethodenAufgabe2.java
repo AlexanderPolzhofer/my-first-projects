@@ -6,20 +6,15 @@ public class MethodenAufgabe2 {
 
     public static void main(String[] args) {
 
+//        Erstelle eine Methode die eine Anrede zurückliefert:
+
+//        Man kann der Methode also, einen Vornamen, einen Nachnamen und die Information ob es sich um eine Frau oder einen Mann handelt mitgeben.
+//        Die Methode liefert dann einen der folgenden Strings zurück:
+//        "Sehr geehrte Frau Susi Müller" oder "Sehr geehrter Herr Paul Müller".
+//        Je nachdem ob es eine weibliche oder männliche Person ist.
+//        Gib der Methode einen sinnvollen Namen.
+
         Scanner scanner = new Scanner(System.in);
-
-        /*
-        * Erstelle eine Methode die eine Anrede zurückliefert. Die Methode bekommt folgende Parameter
-
-        String firstName
-
-        String lastName
-
-        boolean isMale
-
-        Man kann der Methode also, einen Vornamen, einen Nachnamen und die Information ob es sich um eine Frau oder einen Mann handelt mitgeben. Die Methode liefert dann einen der folgenden Strings zurück:
-
-        "Sehr geehrte Frau Susi Müller" oder "Sehr geehrter Herr Paul Müller". Je nachdem ob es eine weibliche oder männliche Person ist. Gib der Methode einen sinnvollen Namen.*/
 
         System.out.println("Bitte geben Sie Ihr Geschlecht ein: ");
 
@@ -27,7 +22,6 @@ public class MethodenAufgabe2 {
 
         String male = "male";
         String female = "female";
-
 
         if (typeIn.equalsIgnoreCase(female)) {
             System.out.println(characterFemale());
