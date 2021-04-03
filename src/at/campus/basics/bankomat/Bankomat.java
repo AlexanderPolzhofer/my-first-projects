@@ -10,10 +10,10 @@ public class Bankomat {
         // 3. Kontostand
         // 4. Beenden
 
-//        boolean isAtmMachineRunning = true;
+        boolean isAtmMachineRunning = true;
         int accountValue = 500;
 
-        while (true) {
+        while (isAtmMachineRunning) {
             String[] bankomatProgramm = {"Bitte wählen Sie eine Möglichkeit aus:", "1. Einzahlen", "2. Abheben", "3. Kontostand", "4. Beenden"};
 
 
@@ -21,12 +21,10 @@ public class Bankomat {
                 System.out.println(i);
             }
 
-
             Scanner scanner = new Scanner(System.in);
             int typeInNumber = scanner.nextInt();
             int depositNumber;
             int withdrawMoney;
-
 
             switch (typeInNumber) {
                 case 1:
@@ -54,8 +52,7 @@ public class Bankomat {
                     break;
                 case 4:
                     System.out.println("Auf Wiedersehen, bis zum nächsten Mal!");
-//                        isAtmMachineRunning = false;
-                    System.exit(0);
+                    isAtmMachineRunning = false;
                     break;
                 default:
                     System.out.println("Wählen Sie eine gültige Eingabe!");
