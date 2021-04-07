@@ -9,7 +9,7 @@ public class MethodenAufgabe3 {
 
         /*Aufgabe 1: Eine Funktion die mir zurückgibt ob eine Zahl eine Primzahl ist oder nicht:*/
 
-        isPrimeNumber();
+        primeNumber();
 
         /* Aufgabe 2: Eine Funktion die mir zurückgibt ob eine Zahl durch 3 teilbar ist:*/
 
@@ -24,7 +24,7 @@ public class MethodenAufgabe3 {
         randomNumberBetweenOneHundredAndFiveHundred();
     }
 
-    public static int isPrimeNumber() {
+    public static int primeNumber() {
 
         Scanner scanner = new Scanner(System.in);
         int inputNumber = scanner.nextInt();

@@ -17,11 +17,11 @@ public class CubeGameRefactored {
             startInput();
             printProgram();
         }
-
     }
 
     public static void printProgram() {
         String[] littleProgram = {"******CubeGame******", "1. start", "2. end"};
+
         for (String s : littleProgram) {
             System.out.println(s);
         }
@@ -39,13 +39,13 @@ public class CubeGameRefactored {
             System.out.println("That's not possible. Choose number 1 or number 2!");
             System.out.println(scanner.nextInt());
         }
-
     }
 
     public static void startInput() {
         int playerValue = 0;
         int max = 6;
         int min = 1;
+
         int totalComputerValue = 0;
 
         for (int i = 1; i <= 6; i++) {
