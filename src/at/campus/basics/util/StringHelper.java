@@ -1,4 +1,4 @@
-package at.campus.basics.stringExercises;
+package at.campus.basics.util;
 
 public class StringHelper {
 
