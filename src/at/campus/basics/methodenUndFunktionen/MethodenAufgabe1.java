@@ -80,4 +80,5 @@ public class MethodenAufgabe1 {
     public static double adding(double a, double b) {
         return a + b;
     }
+
 }

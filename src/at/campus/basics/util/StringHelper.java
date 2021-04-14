@@ -3,6 +3,8 @@ package at.campus.basics.util;
 public class StringHelper {
 
     public static void main(String[] args) {
+
+
         System.out.println(reverseString(""));
         System.out.println(isPalindrome(""));
         System.out.println(printAmountOfLetters(""));
