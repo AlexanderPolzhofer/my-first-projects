@@ -8,24 +8,34 @@ public class CaeserEncryption {
     static int count;
 
     public static void main(String[] args) {
-        String name = getString();
+        String name = readInput();
 
-        char[] letters = name.toCharArray();
+        char[] letters = encrypt(name);
 
-        for (int i = 0; i < letters.length; i++) {
-            letters[i] += count;
-        }
         System.out.println(letters);
 
         System.out.println("Und jetzt wieder zurück!");
 
+
+        System.out.println(decrypt(letters));
+    }
+
+    private static String decrypt(char[] letters) {
         for (int i = 0; i < letters.length; i++) {
             letters[i] -= count;
         }
-        System.out.println(letters);
+        return new String(letters);
     }
 
-    static String getString() {
+    private static char[] encrypt(String name) {
+        char[] letters = name.toCharArray();
+        for (int i = 0; i < letters.length; i++) {
+            letters[i] += count;
+        }
+        return letters;
+    }
+
+    private static String readInput() {
         System.out.println("Bitte geben Sie einen Namen ein: ");
         String name = scan.nextLine();
         System.out.println("Um wie viel Stellen sollen die Buchstaben verschoben werden?");
