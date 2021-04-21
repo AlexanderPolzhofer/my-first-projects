@@ -9,6 +9,11 @@ public class ScannerHelper {
         return scanner.nextLine();
     }
 
+    public static char scannerChar() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next().charAt(0);
+    }
+
     public static int scannerNumber() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();

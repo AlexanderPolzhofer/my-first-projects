@@ -4,11 +4,6 @@ public class StringHelper {
 
     public static void main(String[] args) {
 
-
-        System.out.println(reverseString(""));
-        System.out.println(isPalindrome(""));
-        System.out.println(printAmountOfLetters(""));
-        System.out.println(countLetters("", ' '));
     }
 
     public static boolean isPalindrome(String text) {
@@ -63,5 +58,25 @@ public class StringHelper {
             }
         }
         return Integer.toString(count);
+    }
+
+    public static boolean isLowerCase(char c) {
+        return c >= 'a' && c <= 'z';
+    }
+
+    public static boolean isUpperCase(char c) {
+        return c >= 'A' && c <= 'Z';
+    }
+
+    public static char getReverseCharacter(char c) {
+        char cUcLc = ' ';
+        if (StringHelper.isLowerCase(c)) {
+            cUcLc = Character.toUpperCase(c);
+        }
+        if (StringHelper.isUpperCase(c)) {
+            cUcLc = Character.toLowerCase(c);
+        }
+
+        return cUcLc;
     }
 }
