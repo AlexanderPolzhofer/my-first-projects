@@ -6,7 +6,6 @@ public class MethodenÜbungenBuch {
 
     public static void main(String[] args) {
 
-
         printProgramGoodbye();
 
         druckeLottoschein();

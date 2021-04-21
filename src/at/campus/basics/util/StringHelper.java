@@ -69,7 +69,7 @@ public class StringHelper {
     }
 
     public static char getReverseCharacter(char c) {
-        char cUcLc = ' ';
+        char cUcLc = c;
         if (StringHelper.isLowerCase(c)) {
             cUcLc = Character.toUpperCase(c);
         }

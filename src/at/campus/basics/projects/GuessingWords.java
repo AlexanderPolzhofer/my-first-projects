@@ -11,7 +11,7 @@ public class GuessingWords {
 
     public static void main(String[] args) {
 
-        getProgram();
+        printMenu();
         String[] words = {"Ampel", "abholen", "Anorak", "Antwort", "Augenblick", "Bahn", "Bank", "Baum", "Blitz", "Blatt", "Chance", "Clown", "Durst", "Ende", "Erlebnis", "Daumen", "Ende", "Fahrrad", "denken", "brummen", "anfangen"};
 
         String randomWord = RandomHelper.randomWordFromStringArray(words);
@@ -33,7 +33,7 @@ public class GuessingWords {
 
     }
 
-    public static void getProgram() {
+    public static void printMenu() {
         String[] gameProgram = {"***GuessingWordsGame***", "Bitte wähle 1 oder 2:", "1. Spielen", "2. Beenden"};
 
         for (int k = 0; k < gameProgram.length; k++) {
@@ -53,7 +53,7 @@ public class GuessingWords {
         }
     }
 
-    public static String compareArraysCaseInsensitive(char c, char[] cArrayOne, char[] cArrayTwo) {
+    public static void compareArraysCaseInsensitive(char c, char[] cArrayOne, char[] cArrayTwo) {
         for (int j = 0; j < cArrayOne.length; j++) {
 
             if (cArrayOne[j] == c) {
@@ -65,6 +65,5 @@ public class GuessingWords {
         }
         System.out.println(cArrayTwo);
 
-        return new String(cArrayTwo);
     }
 }
