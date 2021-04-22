@@ -23,4 +23,11 @@ public class ScannerHelper {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextDouble();
     }
+
+    public static String[] scannerInputSplit() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+
+        return input.split(",");
+    }
 }

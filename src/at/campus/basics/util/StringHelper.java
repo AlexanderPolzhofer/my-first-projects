@@ -35,7 +35,7 @@ public class StringHelper {
         return reverseWord;
     }
 
-    public static String printAmountOfLetters(String text) {
+    public static int printAmountOfLetters(String text) {
 
         int sum = 0;
 
@@ -44,10 +44,10 @@ public class StringHelper {
                 sum++;
             }
         }
-        return Integer.toString(sum);
+        return sum;
     }
 
-    public static String countLetters(String text, char c) {
+    public static int countLetters(String text, char c) {
 
         int count = 0;
         text = text.toLowerCase();
@@ -57,7 +57,7 @@ public class StringHelper {
                 count++;
             }
         }
-        return Integer.toString(count);
+        return count;
     }
 
     public static boolean isLowerCase(char c) {
