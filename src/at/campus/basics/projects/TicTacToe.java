@@ -7,34 +7,42 @@ public class TicTacToe {
     static int playerOne = 1;
     static int playerTwo = 2;
     static int activePlayer;
+    static int[][] gameGrid = new int[3][3];
 
     public static void main(String[] args) {
 
-        int[][] gameGrid = new int[3][3];
         printIntro();
 
         activePlayer = playerOne;
+
         while (true) {
             System.out.println("Enter your choice Player " + activePlayer);
-            String[] userInputPlayer1 = ScannerHelper.scannerInputSplit();
-            int x = Integer.parseInt(userInputPlayer1[0]);
-            int y = Integer.parseInt(userInputPlayer1[1]);
+            String[] userInputPlayer = ScannerHelper.scannerInputSplit();
+            int x = Integer.parseInt(userInputPlayer[0]);
+            int y = Integer.parseInt(userInputPlayer[1]);
 
-            // validate input
+            if (gameGrid[x][y] == 0) {
+                gameGrid[x][y] = activePlayer;
+                printField(gameGrid);
+                switchPlayer();
+            } else {
+                System.out.println("Position already used");
+            }
 
-            gameGrid[x][y] = activePlayer;
-
-            printField(gameGrid);
-            switchPlayer();
-            getWinnerHorizontally(gameGrid);
-            getWinnerVertically(gameGrid);
-
-            // check if there is a winner
-
+            if (getWinnerHorizontally(gameGrid) || getWinnerVertically(gameGrid) || getWinnerDiagonalRightToLeft(gameGrid) || getWinnerDiagonalLeftToRight(gameGrid)) {
+                System.out.println("New Game!");
+                resetGameGrid();
+            }
 
         }
+    }
 
-
+    private static void resetGameGrid() {
+        for (int row = 0; row < gameGrid.length; row++) {
+            for (int col = 0; col < gameGrid.length; col++) {
+                gameGrid[row][col] = 0;
+            }
+        }
     }
 
     private static void printIntro() {
@@ -64,7 +72,7 @@ public class TicTacToe {
         }
     }
 
-    private static void getWinnerHorizontally(int[][] multiDimensionalArray) {
+    private static boolean getWinnerHorizontally(int[][] multiDimensionalArray) {
 
         for (int row = 0; row < multiDimensionalArray.length; row++) {
             int firstNumber = multiDimensionalArray[row][0];
@@ -80,13 +88,13 @@ public class TicTacToe {
             }
             if (!wasInBreak) {
                 System.out.println("Congratulations! Player " + firstNumber + " has won!");
-                System.out.println("New Game!");
-                return;
+                return true;
             }
         }
+        return false;
     }
 
-    private static void getWinnerVertically(int[][] multiDimensionalArray) {
+    private static boolean getWinnerVertically(int[][] multiDimensionalArray) {
 
         for (int row = 0; row < multiDimensionalArray.length; row++) {
             int firstNumber = multiDimensionalArray[0][row];
@@ -102,11 +110,45 @@ public class TicTacToe {
             }
             if (!wasInBreak) {
                 System.out.println("Congratulations! Player " + firstNumber + " has won!");
-                System.out.println("New Game!");
-                return;
-
-
+                return true;
             }
         }
+        return false;
     }
+
+    private static int getSymbolPlayerNumber(int number) {
+
+
+        int symbolPlayerNumber = 0;
+
+        if (activePlayer != playerOne) {
+            symbolPlayerNumber = 1;
+        } else if (activePlayer != playerTwo) {
+            symbolPlayerNumber = 2;
+        }
+        return symbolPlayerNumber;
+    }
+
+    private static boolean getWinnerDiagonalLeftToRight(int[][] multiDimensionalArray) {
+
+        int number = 0;
+
+        if (multiDimensionalArray[0][0] == getSymbolPlayerNumber(number) && multiDimensionalArray[1][1] == getSymbolPlayerNumber(number) && multiDimensionalArray[2][2] == getSymbolPlayerNumber(number)) {
+            System.out.println("Congratulations! Player " + getSymbolPlayerNumber(number) + " has won!");
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean getWinnerDiagonalRightToLeft(int[][] multiDimensionalArray) {
+
+        int number = 0;
+
+        if (multiDimensionalArray[0][2] == getSymbolPlayerNumber(number) && multiDimensionalArray[1][1] == getSymbolPlayerNumber(number) && multiDimensionalArray[2][0] == getSymbolPlayerNumber(number)) {
+            System.out.println("Congratulations! Player " + getSymbolPlayerNumber(number) + " has won!");
+            return true;
+        }
+        return false;
+    }
+
 }

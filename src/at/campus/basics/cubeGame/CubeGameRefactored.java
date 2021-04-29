@@ -56,7 +56,7 @@ public class CubeGameRefactored {
         System.out.println("Your total value is: " + playerValue);
 
         for (int j = 1; j <= 6; j++) {
-            int computerMode = randomNumber.nextInt((max - min) + min);
+            int computerMode = randomNumber.nextInt((max - min + 1) - min);
             totalComputerValue += computerMode;
             System.out.println("computer number: " + j + " is " + computerMode);
         }
