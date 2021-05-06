@@ -22,11 +22,12 @@ public class FourWins {
             int x = Integer.parseInt(userInputPlayer[0]);
             int y = Integer.parseInt(userInputPlayer[1]);
             checkPosition(gameBoard, x, y);
-            hasWinner = getWinnerHorizontally(gameBoard);
+
+            if (getWinnerHorizontally(gameBoard) || getWinnerVertically(gameBoard)) {
+                System.out.println("game over");
+            }
 
         }
-
-        System.out.println("game over");
 
     }
 
@@ -84,15 +85,21 @@ public class FourWins {
         return hasWinner;
     }
 
-    private static void getWinnerVertically(int[][] twoDimensionalArray) {
+    private static boolean getWinnerVertically(int[][] twoDimensionalArray) {
+
+        boolean hasWinner = false;
 
         for (int row = 0; row < twoDimensionalArray.length; row++) {
             for (int column = 0; column < twoDimensionalArray.length; column++) {
                 if (twoDimensionalArray[row][column] != 0) {
-//                    if (twoDimensionalArray[row][column] ==)
+                    if (twoDimensionalArray[row][column] == twoDimensionalArray[row + 1][column] && twoDimensionalArray[row][column] == twoDimensionalArray[row + 2][column] && twoDimensionalArray[row][column] == twoDimensionalArray[row + 3][column]) {
+                        System.out.println("Player " + inactivePlayer + " has won!");
+                        hasWinner = true;
+                    }
                 }
             }
         }
+        return hasWinner;
     }
 
 
