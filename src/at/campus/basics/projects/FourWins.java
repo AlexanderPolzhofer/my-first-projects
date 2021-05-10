@@ -78,6 +78,7 @@ public class FourWins {
                     if (twoDimensionalArray[row][column] == twoDimensionalArray[row][column + 1] && twoDimensionalArray[row][column] == twoDimensionalArray[row][column + 2] && twoDimensionalArray[row][column] == twoDimensionalArray[row][column + 3]) {
                         System.out.println("Player " + inactivePlayer + " has won!");
                         hasWinner = true;
+                        break;
                     }
                 }
             }
@@ -95,6 +96,7 @@ public class FourWins {
                     if (twoDimensionalArray[row][column] == twoDimensionalArray[row + 1][column] && twoDimensionalArray[row][column] == twoDimensionalArray[row + 2][column] && twoDimensionalArray[row][column] == twoDimensionalArray[row + 3][column]) {
                         System.out.println("Player " + inactivePlayer + " has won!");
                         hasWinner = true;
+                        break;
                     }
                 }
             }

@@ -1,4 +1,4 @@
-package oop.beispiel2;
+package at.campus.oop.exercise2;
 
 import java.util.ArrayList;
 
@@ -37,8 +37,9 @@ public class Room {
 
     public void searchAge(int age) {
         for (Player p : mPlayerList) {
-            if (age == p.getAge())
+            if (age == p.getAge()) {
                 System.out.println(p.getName() + " " + p.getAge());
+            }
         }
     }
 

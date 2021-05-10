@@ -1,4 +1,4 @@
-package oop.beispiel2;
+package at.campus.oop.exercise2;
 
 public class Player {
 

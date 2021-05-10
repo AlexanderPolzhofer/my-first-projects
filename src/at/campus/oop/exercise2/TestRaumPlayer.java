@@ -1,4 +1,4 @@
-package oop.beispiel2;
+package at.campus.oop.exercise2;
 
 
 public class TestRaumPlayer {
@@ -21,10 +21,13 @@ public class TestRaumPlayer {
         mRoom.addPlayerList(mPlayer6);
         mRoom.addPlayerList(mPlayer7);
         mRoom.addPlayerList(mPlayer8);
+
         mPlayer.setMyRoom(mRoom);
+
         mRoom.printPlayers();
         mRoom.getAge();
         mRoom.searchAge(30);
+
 
     }
 

@@ -1,4 +1,4 @@
-package oop.beispiel1;
+package at.campus.oop.exercise1;
 
 import java.util.ArrayList;
 
