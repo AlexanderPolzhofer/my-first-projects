@@ -2,14 +2,35 @@ package at.campus.oop.exercise3;
 
 public class Car {
 
-    String color;
-    String brand;
-    String serialNumber;
-    String brake;
+    private final double fuelConsumption;
+    private double fuelAmount;
+    private Engine engine;
 
-    double fuelConsumption;
-    double fuelAmount;
-    double remainingRange;
+    public Car(Engine engine, String brand, double fuelConsumption, String serialNumber) {
+        this.engine = engine;
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public String getColor(String color) {
+        return color;
+    }
+
+    public String getCarType(String carType) {
+        return carType;
+    }
+
+    public double getFuelAmount(double fuelAmount) {
+        this.fuelAmount = fuelAmount;
+        return fuelAmount;
+    }
 
     public double drive(double fuelConsumption) {
         this.fuelAmount = this.fuelAmount - fuelConsumption;
@@ -18,8 +39,8 @@ public class Car {
     }
 
     public void brake() {
-        this.brake = "Ich bremse! 3 ... 2 ... 1 ... STOP";
-        System.out.println(this.brake);
+        String brake = "Ich bremse! 3 ... 2 ... 1 ... STOP";
+        System.out.println(brake);
     }
 
     public void turboBoost(double fuelAmount) {
@@ -33,7 +54,7 @@ public class Car {
     }
 
     public double getRemainingRange(double fuelAmount, double fuelConsumption) {
-        this.remainingRange = this.fuelAmount - this.fuelConsumption;
+        double remainingRange = this.fuelAmount - this.fuelConsumption;
         System.out.println("The remainingRange equals " + remainingRange + " liter");
         return remainingRange;
     }

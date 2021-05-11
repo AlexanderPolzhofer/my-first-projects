@@ -1,4 +1,4 @@
-package at.campus.oop.exercise4;
+package at.campus.oop.exercise3;
 
 public class RearMirror {
     private int size;
