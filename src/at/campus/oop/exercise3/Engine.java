@@ -12,4 +12,8 @@ public class Engine {
         this.horsePower = horsePower;
         this.type = type;
     }
+
+    public int getHorsePower() {
+        return horsePower;
+    }
 }

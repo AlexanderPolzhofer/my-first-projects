@@ -1,22 +1,37 @@
 package at.campus.oop.exercise3;
 
+import java.util.ArrayList;
+
 public class Car {
 
+    private ArrayList<RearMirror> mirrors;
+    private ArrayList<CarTire> carTires;
+
     private final double fuelConsumption;
+    private int speed;
     private double fuelAmount;
     private Engine engine;
+    private Tank tank;
+    private String brand;
 
-    public Car(Engine engine, String brand, double fuelConsumption, String serialNumber) {
+
+    public Car(Engine engine, Tank tank, String brand, double fuelConsumption, String serialNumber) {
         this.engine = engine;
         this.fuelConsumption = fuelConsumption;
+        this.mirrors = new ArrayList<>();
+        this.carTires = new ArrayList<>();
+    }
+
+    public String getBrand(String brand) {
+        return brand;
     }
 
     public Engine getEngine() {
         return engine;
     }
 
-    public void setEngine(Engine engine) {
-        this.engine = engine;
+    public Tank getTank(Tank tank) {
+        return tank;
     }
 
     public String getColor(String color) {
@@ -32,9 +47,14 @@ public class Car {
         return fuelAmount;
     }
 
-    public double drive(double fuelConsumption) {
+    public double drive(double fuelConsumption, int speed) {
         this.fuelAmount = this.fuelAmount - fuelConsumption;
-        System.out.println("I am driving!");
+        this.speed = speed;
+        if (speed > 90) {
+            System.out.println("...Vollgas!!");
+        }
+
+        System.out.println("I am driving! " + speed + " mph");
         return fuelAmount;
     }
 
@@ -65,4 +85,19 @@ public class Car {
         }
     }
 
+    public void addMirror(RearMirror rearMirror) {
+        this.mirrors.add(rearMirror);
+    }
+
+    public ArrayList<RearMirror> getMirrors() {
+        return mirrors;
+    }
+
+    public void addTires(CarTire carTire){
+        this.carTires.add(carTire);
+    }
+
+    public ArrayList<CarTire> getCarTires(){
+        return carTires;
+    }
 }
