@@ -7,7 +7,6 @@ public class RemoteControl {
     private Battery battery1;
     private Battery battery2;
 
-
     public RemoteControl() {
     }
 

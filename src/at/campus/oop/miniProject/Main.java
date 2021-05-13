@@ -8,7 +8,7 @@ public class Main {
 
         RemoteControl rC = new RemoteControl();
 
-        rC.setBatteries(b1,b2);
+        rC.setBatteries(b1, b2);
         rC.setOn(true);
 
         System.out.println(rC.getStatus());
@@ -19,11 +19,10 @@ public class Main {
 
         System.out.println(rC.getStatus());
 
+
         rC.setBattery1(new Battery(3.5));
 
         System.out.println(rC.getStatus());
-
-
 
 
     }
