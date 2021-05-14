@@ -4,9 +4,9 @@ public class Producer {
 
     private String producerName;
     private String producerCountry;
-    private int discount;
+    private double discount;
 
-    public Producer(String producerName, String producerCountry, int discount) {
+    public Producer(String producerName, String producerCountry, double discount) {
         this.producerName = producerName;
         this.producerCountry = producerCountry;
         this.discount = discount;
@@ -20,4 +20,7 @@ public class Producer {
         return producerCountry;
     }
 
+    public double getDiscount() {
+        return discount;
+    }
 }

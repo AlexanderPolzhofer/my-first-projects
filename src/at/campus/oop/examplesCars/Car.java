@@ -13,7 +13,7 @@ public class Car {
     private double carOdometer;
 
 
-    public Car(String color, String carClass, int maxSpeed, double basicPrice,Engine engine, Producer producer, Tank tank) {
+    public Car(String color, String carClass, int maxSpeed, double basicPrice, Engine engine, Producer producer, Tank tank) {
         this.color = color;
         this.carClass = carClass;
         this.maxSpeed = maxSpeed;
@@ -35,8 +35,12 @@ public class Car {
         return tank;
     }
 
+    public double getBasicPrice() {
+        this.basicPrice = this.basicPrice * (1 - getProducer().getDiscount());
+        return basicPrice;
+    }
 
-
-
-
+    public double getCarOdometer() {
+        return carOdometer;
+    }
 }

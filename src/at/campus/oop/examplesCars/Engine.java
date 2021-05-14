@@ -23,7 +23,14 @@ public class Engine {
         return newtonMeter;
     }
 
-    public TYPE getType(){
+    public TYPE getType() {
         return type;
+    }
+
+    public double getFuelConsumption(double carOdometer) {
+        if (carOdometer >= 50_000) {
+            this.fuelConsumption *= 1.098;
+        }
+        return fuelConsumption;
     }
 }
