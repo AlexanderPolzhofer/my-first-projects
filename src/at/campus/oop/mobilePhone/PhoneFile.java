@@ -4,7 +4,7 @@ public class PhoneFile {
 
     public enum TYPE {LARGE, MEDIUM, SMALL}
 
-    private TYPE type;
+    public TYPE type;
 
     private String extension;
     private String name;

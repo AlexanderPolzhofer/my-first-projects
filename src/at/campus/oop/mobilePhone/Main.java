@@ -9,16 +9,15 @@ public class Main {
         Phone phone = new Phone("silver", "black", simCard, camera, memoryCard);
 
 
-        phone.takePicture();
+        phone.takePicture(PhoneFile.TYPE.MEDIUM);
 
         System.out.println(phone.getFreeSpace());
-        phone.takePicture();
+        phone.takePicture(PhoneFile.TYPE.LARGE);
 
         phone.getMemoryCard().getFiles();
 
-
         System.out.println(phone.getFreeSpace());
-        phone.takePicture();
+        phone.takePicture(PhoneFile.TYPE.SMALL);
 
         System.out.println(phone.getFreeSpace());
 

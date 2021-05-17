@@ -4,11 +4,10 @@ public class Camera {
 
     private int resolution;
 
-    public PhoneFile makePicture() {
+    public PhoneFile makePicture(PhoneFile.TYPE type) {
         System.out.println("Click ... make picture!");
 
-        PhoneFile phoneFile = new PhoneFile("d1111", PhoneFile.TYPE.SMALL, ".jpg");
+        PhoneFile phoneFile = new PhoneFile("d1111", type, ".jpg");
         return phoneFile;
     }
-
 }

@@ -30,8 +30,8 @@ public class Phone {
         return memoryCard;
     }
 
-    public void takePicture() {
-        PhoneFile file = getCamera().makePicture();
+    public void takePicture(PhoneFile.TYPE type) {
+        PhoneFile file = getCamera().makePicture(type);
         System.out.println(file.getInfo());
         this.memoryCard.saveFile(file);
     }
