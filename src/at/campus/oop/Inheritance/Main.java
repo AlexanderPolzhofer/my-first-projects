@@ -24,12 +24,15 @@ public class Main {
 
         Engine engineRaceCar = new Engine(435, Engine.TYPE.GAS, "520_Nm");
         Tank tankRaceCar = new Tank(85);
-        RaceCar raceCar = new RaceCar(engineRaceCar, tankRaceCar, "Mercedes", "GLE COUPE 53 AMG", 10.5, "MB_AMG/53_COUPE-200792");
+        RearSpoiler rearSpoiler = new RearSpoiler("black", "AMG", "carbon");
+        RaceCar raceCar = new RaceCar(engineRaceCar, tankRaceCar, "Mercedes", "GLE COUPE 53 AMG", 10.5, "MB_AMG/53_COUPE-200792", rearSpoiler);
 
         System.out.println("RaceCar brand: " + raceCar.getBrand() + " serial number: " + raceCar.getSerialNumber() + " type: " + raceCar.getCarType());
 
         raceCar.drive(10.5, 235);
         raceCar.brake();
+
+        System.out.println(raceCar.getRearSpoiler().getMaterial());
 
 
     }

@@ -5,8 +5,17 @@ import at.campus.oop.exercise3.Engine;
 import at.campus.oop.exercise3.Tank;
 
 public class RaceCar extends Car {
-    public RaceCar(Engine engine, Tank tank, String brand, String carType, double fuelConsumption, String serialNumber) {
+
+    private RearSpoiler rearSpoiler;
+
+    public RaceCar(Engine engine, Tank tank, String brand, String carType, double fuelConsumption, String serialNumber, RearSpoiler rearSpoiler) {
         super(engine, tank, brand, carType, fuelConsumption, serialNumber);
+        this.rearSpoiler = rearSpoiler;
+
+    }
+
+    public RearSpoiler getRearSpoiler() {
+        return rearSpoiler;
     }
 
     @Override
