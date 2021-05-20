@@ -13,16 +13,26 @@ public class Car {
     private Engine engine;
     private Tank tank;
     private String brand;
+    private String serialNumber;
+    private String carType;
 
 
-    public Car(Engine engine, Tank tank, String brand, double fuelConsumption, String serialNumber) {
+    public Car(Engine engine, Tank tank, String brand, String carType, double fuelConsumption, String serialNumber) {
         this.engine = engine;
+        this.tank = tank;
+        this.brand = brand;
+        this.carType = carType;
         this.fuelConsumption = fuelConsumption;
+        this.serialNumber = serialNumber;
         this.mirrors = new ArrayList<>();
         this.carTires = new ArrayList<>();
     }
 
-    public String getBrand(String brand) {
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public String getBrand() {
         return brand;
     }
 
@@ -30,7 +40,7 @@ public class Car {
         return engine;
     }
 
-    public Tank getTank(Tank tank) {
+    public Tank getTank() {
         return tank;
     }
 
@@ -38,7 +48,7 @@ public class Car {
         return color;
     }
 
-    public String getCarType(String carType) {
+    public String getCarType() {
         return carType;
     }
 
@@ -93,11 +103,11 @@ public class Car {
         return mirrors;
     }
 
-    public void addTires(CarTire carTire){
+    public void addTires(CarTire carTire) {
         this.carTires.add(carTire);
     }
 
-    public ArrayList<CarTire> getCarTires(){
+    public ArrayList<CarTire> getCarTires() {
         return carTires;
     }
 }
