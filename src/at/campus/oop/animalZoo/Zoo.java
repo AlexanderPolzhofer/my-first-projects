@@ -25,4 +25,8 @@ public class Zoo {
     public void setStreet(String street) {
         this.street = street;
     }
+
+    public void makeShow() {
+        System.out.println("Welcome to the zoo! The show begins!");
+    }
 }

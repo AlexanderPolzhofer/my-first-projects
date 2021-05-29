@@ -19,6 +19,7 @@ public class Main {
         System.out.println(zoo.getStreet());
         zoo.setName("Wild Zoo");
         System.out.println(zoo.getName());
+        zoo.makeShow();
 
     }
 }
