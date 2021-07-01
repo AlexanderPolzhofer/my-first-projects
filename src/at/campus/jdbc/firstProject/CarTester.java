@@ -15,8 +15,6 @@ public class CarTester {
         List<Car> cars = dao.getAllCars();
 
 
-
-
         for (Car car : cars) {
             System.out.println(car.getId() + " -|- " + car.getModel() + " -|- " + car.getBrand() + " -|- " + car.getPrice());
         }
