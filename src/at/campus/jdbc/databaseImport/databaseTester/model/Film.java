@@ -3,9 +3,9 @@ package at.campus.jdbc.databaseImport.databaseTester.model;
 public class Film {
     private int id;
     private String title;
-    private int year;
+    private String year;
 
-    public Film(int id, String title, int year) {
+    public Film(int id, String title, String year) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -27,11 +27,11 @@ public class Film {
         this.title = title;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 }
