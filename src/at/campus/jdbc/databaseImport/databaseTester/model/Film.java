@@ -4,11 +4,13 @@ public class Film {
     private int id;
     private String title;
     private String year;
+    private String country;
 
-    public Film(int id, String title, String year) {
+    public Film(int id, String title, String year, String country) {
         this.id = id;
         this.title = title;
         this.year = year;
+        this.country = country;
     }
 
     public int getId() {
@@ -33,5 +35,13 @@ public class Film {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

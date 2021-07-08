@@ -14,15 +14,13 @@ public class GenreDAO {
     List<Genre> genres = new ArrayList<>();
     List<String> uniqueGenre = new ArrayList<>();
     Connection con;
+    int i = 1;
 
     public void deleteFromGenreDB() {
         try {
-
             this.con = getDBConnection();
             Statement stmt = con.createStatement();
-            //stmt.execute("delete  from Film");
-            stmt.execute("delete  from Genre");
-
+            stmt.execute("delete from Genre");
 
             con.close();
         } catch (Exception e) {
@@ -31,24 +29,24 @@ public class GenreDAO {
 
     }
 
-    public void getAllGenres() {
-
-
-        try {
-
-            this.con = getDBConnection();
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * Genre");
-            while (rs.next()) {
-//                Genre genre = new Genre(rs.getInt(1), rs.getString(2));
-//                this.genres.add(genre);
-                System.out.println(rs.getInt(1) + rs.getString(2));
-            }
-            con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
+//    public void getAllGenres() {
+//
+//
+//        try {
+//
+//            this.con = getDBConnection();
+//            Statement stmt = con.createStatement();
+//            ResultSet rs = stmt.executeQuery("select * Genre");
+//            while (rs.next()) {
+////                Genre genre = new Genre(rs.getInt(1), rs.getString(2));
+////                this.genres.add(genre);
+//                System.out.println(rs.getInt(1) + rs.getString(2));
+//            }
+//            con.close();
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//    }
 
     public Connection getDBConnection() {
         try {
@@ -67,20 +65,13 @@ public class GenreDAO {
 
         try {
             stmt = this.con.prepareStatement("insert into Genre values (?,?)");
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (NumberFormatException nfe) {
-            System.out.println("Exceptiontext: " + nfe);
-        }
-
-        try {
             stmt.setInt(1, genre.getId());
             stmt.setString(2, genre.getName());
             stmt.execute();
+        } catch (NumberFormatException nfe) {
+            System.out.println("Exceptiontext: " + nfe);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (NumberFormatException nx) {
-            System.out.println("nx: " + nx);
         }
 
 
@@ -97,22 +88,38 @@ public class GenreDAO {
 //        }
 
     }
+    /*
+    Suche Genres in unserer Genres Arraylist
+     */
+    private int  searchGenres(String name) {
+        for (Genre g : genres) {
+            if (g.getName().equals(name)) return g.getId();
+        }
+        return -1;
+    }
 
-    public void splitGenre(String name) {
+    public void splitGenre(String name,int filmID) {
         List<String> ssPlit = Arrays.asList(name.split(","));
 
         for (String s : ssPlit) {
             String sNew = s.trim().toLowerCase();
-            if (this.uniqueGenre.contains(sNew)) {
-                continue;
-            } else {
-                this.uniqueGenre.add(sNew);
+            int gId = searchGenres(sNew);
+            if (gId < 0) {
+                this.insertGenre(new Genre(this.i, sNew));
+                this.genres.add(new Genre(this.i, sNew));
+                gId = this.i;
             }
+
+            // Datensatz ist vorhanden hier könnte ich gleich  Datensatz für movie-genre erstellen
+            // insert into genremovie
+            //
+
+            this.i++;
         }
     }
 
-    public void outputUniqueGenres(){
-        for (String s: this.uniqueGenre) {
+    public void outputUniqueGenres() {
+        for (String s : this.uniqueGenre) {
             System.out.println(s);
         }
     }

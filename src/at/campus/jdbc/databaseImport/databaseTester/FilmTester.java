@@ -1,8 +1,10 @@
 package at.campus.jdbc.databaseImport.databaseTester;
 
 import at.campus.jdbc.databaseImport.databaseTester.dao.FilmDAO;
+import at.campus.jdbc.databaseImport.databaseTester.dao.FilmHasGenreDAO;
 import at.campus.jdbc.databaseImport.databaseTester.dao.GenreDAO;
 import at.campus.jdbc.databaseImport.databaseTester.model.Film;
+import at.campus.jdbc.databaseImport.databaseTester.model.FilmHasGenre;
 import at.campus.jdbc.databaseImport.databaseTester.model.Genre;
 
 import java.io.*;
@@ -13,13 +15,14 @@ import java.util.List;
 public class FilmTester {
 
 
-    public static final GenreDAO gDAO = new GenreDAO();
-    public static final FilmDAO fDAO = new FilmDAO();
+    public static GenreDAO gDAO = new GenreDAO();
+    public static FilmDAO fDAO = new FilmDAO();
+    public static FilmHasGenreDAO fhgDAO = new FilmHasGenreDAO();
 
     public static void main(String[] args) {
 
 
-        List<String> erroLine = new ArrayList<>();
+        List<String> errorLine = new ArrayList<>();
 
 
         try {
@@ -29,12 +32,13 @@ public class FilmTester {
             // delete Data from DB
 
 //            fDAO.deleteDataFromDB();
-            gDAO.deleteFromGenreDB();
+//            gDAO.deleteFromGenreDB();
 
             String header = br.readLine();
             int i = 0;
             fDAO.getDBConnection();
             gDAO.getDBConnection();
+            fhgDAO.getDBConnection();
             while ((sCurrentLine = br.readLine()) != null) {
                 try {
                     i++;
@@ -44,13 +48,33 @@ public class FilmTester {
                     String year = ssPlit[8];
                     String title = ssPlit[0];
                     String name = ssPlit[13];
+                    String country = ssPlit[7];
 
                     title.replace("'", "");
 
-                    Film film = new Film(id, title, year);
-//                    Genre genre = new Genre(i, name);
 
-                    gDAO.splitGenre(name);
+                    Film film = new Film(id, title, year, country);
+
+                    /*
+                       Genres sind ja 'Action, Lieber'
+                       split aufteilen in
+                       Action
+                       Lieber
+
+                    String [] theGenres = name.split(",");
+                    for (String s : theGenres) {
+                        Genre genre = new Genre(i, s.trim());
+                        i++;
+                    }
+                    */
+
+                    // split Genres and insert into database table
+
+//                    gDAO.splitGenre(name, film.getId());
+
+                    // idea to insert into fhg table
+
+
 
 //                    insertGenreInMain(genre, i);
 //                    insertFilmInMain(film, i);
@@ -60,7 +84,7 @@ public class FilmTester {
                     System.out.println("nx" + nx);
 
                 } catch (ArrayIndexOutOfBoundsException test) {
-                    erroLine.add("Zeile: " + i);
+                    errorLine.add("Zeile: " + i);
                     System.out.println("x" + test);
                 }
 
@@ -70,6 +94,7 @@ public class FilmTester {
             try {
                 fDAO.getDBConnection().close();
                 gDAO.getDBConnection().close();
+                fhgDAO.getDBConnection().close();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -78,8 +103,8 @@ public class FilmTester {
 
 
         }
-        System.out.println(erroLine);
-        gDAO.outputUniqueGenres();
+        System.out.println(errorLine);
+//        gDAO.outputUniqueGenres();
     }
 
     public static void insertGenreInMain(Genre genre, int i) {
@@ -104,7 +129,7 @@ public class FilmTester {
 
 
             fDAO.insertFilm(film);
-            System.out.println(film.getId() + " | " + film.getTitle() + " | " + film.getYear());
+            System.out.println(film.getId() + " | " + film.getTitle() + " | " + film.getYear() + " | " + film.getCountry());
             //System.out.println(id+year+title);
         } catch (ArrayIndexOutOfBoundsException e) {
             //e.printStackTrace();
@@ -115,8 +140,6 @@ public class FilmTester {
         }
 
     }
-
-
 
 
 }

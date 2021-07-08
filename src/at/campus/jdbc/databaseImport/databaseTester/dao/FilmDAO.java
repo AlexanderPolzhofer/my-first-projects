@@ -16,9 +16,7 @@ public class FilmDAO {
 
             Connection con = getDBConnection();
             Statement stmt = con.createStatement();
-            stmt.execute("delete  from Film");
-            //stmt.execute("delete  from Genre");
-
+            stmt.execute("delete from Film");
 
             con.close();
         } catch (Exception e) {
@@ -36,7 +34,7 @@ public class FilmDAO {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from Film");
             while (rs.next()) {
-                Film film = new Film(rs.getInt(1), rs.getString(2), rs.getString(3));
+                Film film = new Film(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
 
                 this.films.add(film);
             }
@@ -52,19 +50,15 @@ public class FilmDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = this.con.prepareStatement("insert into Film values (?,?,?,null)");
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
-        try {
+            stmt = this.con.prepareStatement("insert into Film values (?,?,?,?)");
             stmt.setInt(1, film.getId());
             stmt.setString(2, film.getTitle());
             stmt.setString(3, film.getYear());
+            stmt.setString(4, film.getCountry());
             stmt.execute();
-        } catch (SQLException throwables){
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
-        } catch (NumberFormatException nx){
+        } catch (NumberFormatException nx) {
             System.out.println("nx" + nx);
         }
 
