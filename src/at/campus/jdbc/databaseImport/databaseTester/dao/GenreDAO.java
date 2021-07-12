@@ -29,25 +29,6 @@ public class GenreDAO {
 
     }
 
-//    public void getAllGenres() {
-//
-//
-//        try {
-//
-//            this.con = getDBConnection();
-//            Statement stmt = con.createStatement();
-//            ResultSet rs = stmt.executeQuery("select * Genre");
-//            while (rs.next()) {
-////                Genre genre = new Genre(rs.getInt(1), rs.getString(2));
-////                this.genres.add(genre);
-//                System.out.println(rs.getInt(1) + rs.getString(2));
-//            }
-//            con.close();
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//    }
-
     public Connection getDBConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -74,31 +55,20 @@ public class GenreDAO {
             throwables.printStackTrace();
         }
 
-
-//        try {
-//
-//            this.con = getDBConnection();
-//            Statement stmt = con.createStatement();
-//            String sql = "insert ignore into Genre (id, name) values ('" + genre.getId() + "','" + genre.getName() + "')";
-//            boolean result = stmt.execute(sql);
-//
-//            con.close();
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-
     }
+
     /*
     Suche Genres in unserer Genres Arraylist
      */
-    private int  searchGenres(String name) {
+
+    private int searchGenres(String name) {
         for (Genre g : genres) {
             if (g.getName().equals(name)) return g.getId();
         }
         return -1;
     }
 
-    public void splitGenre(String name,int filmID) {
+    public void splitGenre(String name, int filmID) {
         List<String> ssPlit = Arrays.asList(name.split(","));
 
         for (String s : ssPlit) {

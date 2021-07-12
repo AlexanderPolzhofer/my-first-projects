@@ -63,18 +63,6 @@ public class FilmDAO {
         }
 
 
-//        try {
-//
-//            Statement stmt = con.createStatement();
-//            String sql = "insert into Film (id, title, year) values ('" + film.getId() + "','" + film.getTitle() + "','" + film.getYear() + "')";
-//            boolean result = stmt.execute(sql);
-//
-//            // con.close();
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-
-
     }
 
     public Connection getDBConnection() {
