@@ -7,7 +7,7 @@ public class TestAdder {
         Adder adder = new Adder();
 
         try {
-            double sum = adder.addNumbers(5, 5);
+            double sum = adder.addNumbers(5, -5);
             double ratio = adder.dividedNumbers(81.9875, 4.45773);
             System.out.println("The sum is: " + sum);
             System.out.println("The ratio is: " + ratio);
