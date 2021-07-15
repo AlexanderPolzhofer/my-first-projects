@@ -1,13 +1,15 @@
 package at.campus.basics.filesLesenUndSchreibenIO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Department {
     private String name;
-    private List<Person> employees;
+    private List<String> employees;
 
     public Department(String name) {
         this.name = name;
+        this.employees = new ArrayList<>();
     }
 
     public String getName() {
@@ -18,11 +20,13 @@ public class Department {
         this.name = name;
     }
 
-    public List<Person> getEmployees() {
-        return employees;
+    public void getEmployee() {
+        for (String s : this.employees) {
+            System.out.println(this.name + ": " + s);
+        }
     }
 
-    public void setEmployees(List<Person> employees) {
-        this.employees = employees;
+    public void addToDepartmentList(String employee) {
+        this.employees.add(employee);
     }
 }
