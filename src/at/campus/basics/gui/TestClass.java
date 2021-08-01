@@ -3,7 +3,6 @@ package at.campus.basics.gui;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class TestClass {
 
@@ -78,7 +77,5 @@ public class TestClass {
         button.setFocusable(false);
 
         label.add(button);
-
     }
-
 }
