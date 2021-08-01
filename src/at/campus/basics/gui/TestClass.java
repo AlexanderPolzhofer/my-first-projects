@@ -56,5 +56,13 @@ public class TestClass {
 
         frame.setIconImage(icon.getImage());
         frame.getContentPane().setBackground(new Color(0xffffff));
+
+        /*create panel and add to label*/
+
+        JPanel whitePanel = new JPanel();
+        whitePanel.setBackground(Color.white);
+        whitePanel.setBounds(0, 0, 50, 50);
+        label.add(whitePanel);
+
     }
 }
