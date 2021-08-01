@@ -3,8 +3,10 @@ package at.campus.basics.gui;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class TestClass {
+
     public static void main(String[] args) {
         /*create Border*/
 
@@ -64,5 +66,19 @@ public class TestClass {
         whitePanel.setBounds(0, 0, 50, 50);
         label.add(whitePanel);
 
+        /*create button and add to label*/
+
+        JButton button = new JButton();
+
+        button.setBounds(385, 360, 100, 100);
+        button.addActionListener(e -> System.out.println("poo!"));
+        button.setBackground(Color.white);
+        button.setText("push me");
+        button.setFont(new Font("comic sans serif", Font.BOLD, 16));
+        button.setFocusable(false);
+
+        label.add(button);
+
     }
+
 }
