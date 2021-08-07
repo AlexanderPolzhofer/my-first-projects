@@ -1,4 +1,4 @@
-package at.campus.basics.gui;
+package at.campus.basics.gui.firstProjectsGUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
